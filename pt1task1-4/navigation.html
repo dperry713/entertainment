@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entertainment Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#movies">Movies</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="image-gallery">
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="movie1.jpg" alt="Movie Poster 1">
+      <a href="#" class="cta-button">Watch Now</a>
+    </div>
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="album1.jpg" alt="Album Cover 1">
+      <a href="#" class="cta-button">Listen Here</a>
+    </div>
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="game1.jpg" alt="Game Screenshot 1">
+      <a href="#" class="cta-button">Play Game</a>
+    </div>
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="movie2.jpg" alt="Movie Poster 2">
+      <a href="#" class="cta-button">Watch Now</a>
+    </div>
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="album2.jpg" alt="Album Cover 2">
+      <a href="#" class="cta-button">Listen Here</a>
+    </div>
+    <div class="gallery-item" onclick="showImage(this)">
+      <img src="game2.jpg" alt="Game Screenshot 2">
+      <a href="#" class="cta-button">Play Game</a>
+    </div>
+  </div>
+
+  <div id="fullscreen-container" onclick="this.style.display='none'">
+    <img id="fullscreen-image" src="" alt="Fullscreen Image">
+    <p id="image-source"></p>
+  </div>
+
+  <script>
+    function showImage(element) {
+      var fullscreenContainer = document.getElementById('fullscreen-container');
+      var fullscreenImage = document.getElementById('fullscreen-image');
+      var imageSource = document.getElementById('image-source');
+      
+      fullscreenImage.src = element.querySelector('img').src;
+      imageSource.textContent = 'Source: ' + fullscreenImage.src;
+      fullscreenContainer.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
